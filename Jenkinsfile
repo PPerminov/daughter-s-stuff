@@ -1,9 +1,14 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'ubuntu'
+    }
+
+  }
   stages {
     stage('error') {
       steps {
-        sh 'echo 12 && ls -la'
+        sleep 12
       }
     }
   }
